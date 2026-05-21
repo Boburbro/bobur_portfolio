@@ -1,0 +1,102 @@
+{
+  "academic": [
+    {
+      "id": "kaust",
+      "university": "KAUST",
+      "fullName": "King Abdullah University of Science and Technology",
+      "degree": "Magistr",
+      "years": "2026 — Present",
+      "semesters": [
+        {
+          "id": "kaust-semester-1",
+          "name": "1-semestr",
+          "year": "2026",
+          "items": [
+            "Machine Learning kursi",
+            "Research metodologiyasi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "millat-umidi",
+      "university": "Millat Umidi",
+      "fullName": "Millat Umidi Universiteti",
+      "degree": "Bakalavr",
+      "years": "2023 — 2026",
+      "semesters": [
+        {
+          "id": "mu-semester-2",
+          "name": "2-semestr",
+          "year": "2024",
+          "items": [
+            "Data Structures kursi loyihasi",
+            "Algoritm tahlili presentatsiyasi"
+          ]
+        },
+        {
+          "id": "mu-semester-1",
+          "name": "1-semestr",
+          "year": "2023",
+          "items": [
+            "Python asoslari loyihasi",
+            "Kirish imtihon maqolasi"
+          ]
+        }
+      ]
+    }
+  ],
+  "semesterDetails": {
+    "kaust-semester-1": {
+      "name": "1-semestr — KAUST",
+      "works": [
+        {
+          "title": "Machine Learning kursi loyihasi",
+          "type": "project",
+          "format": "pdf",
+          "desc": "Supervised learning modellari implementatsiyasi."
+        },
+        {
+          "title": "Research metodologiyasi taqdimoti",
+          "type": "presentation",
+          "format": "pptx",
+          "desc": "Ilmiy tadqiqot metodlari bo'yicha prezentatsiya."
+        }
+      ]
+    },
+    "mu-semester-2": {
+      "name": "2-semestr — Millat Umidi",
+      "works": [
+        {
+          "title": "Data Structures kursi loyihasi",
+          "type": "project",
+          "format": "pdf",
+          "desc": "Linked list, stack va queue implementatsiyasi."
+        },
+        {
+          "title": "Algoritm tahlili presentatsiyasi",
+          "type": "presentation",
+          "format": "pptx",
+          "desc": "Sorting algoritmlarini taqqoslash."
+        }
+      ]
+    },
+    "mu-semester-1": {
+      "name": "1-semestr — Millat Umidi",
+      "works": [
+        {
+          "title": "Python asoslari loyihasi",
+          "type": "project",
+          "format": "pdf",
+          "desc": "Calculator va to-do app yaratish."
+        },
+        {
+          "title": "Kirish imtihon maqolasi",
+          "type": "paper",
+          "format": "pdf",
+          "desc": "IT sohasiga kirish bo'yicha akademik maqola."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "IshTop",
+    "desc": "A job board and vacancy platform built with Flutter and Firebase. Contributed to real-time Firebase data synchronization and UI features. Reached over 100k+ downloads by 2026. One of my key early projects where I learned a great deal.",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Firebase"
+    ],
+    "image": "ishtop",
+    "links": {
+      "playStore": "https://play.google.com/store/apps/details?id=uz.ishtop.app"
+    }
+  },
+  {
+    "name": "BozorMedia",
+    "desc": "A platform connecting market merchants and buyers. Executed a complete app redesign from Figma. Integrated low-latency live streaming features using RTMP and WebRTC protocols. Released to production.",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "WebRTC",
+      "RTMP",
+      "UI Redesign"
+    ],
+    "image": "bozormedia",
+    "links": {
+      "playStore": "https://play.google.com/store/apps/details?id=uz.abusaxiy.abusaxiy",
+      "appStore": "https://apps.apple.com/app/bozormedia/id6461212831"
+    }
+  },
+  {
+    "name": "Akfa Comfort",
+    "desc": "A loyalty and calculation app for heating systems installers. Enables installers to earn reward points and bonuses by submitting installation data and scanning product barcodes. Contributed features like custom room management and executed a complete UI redesign. Reached over 10k+ downloads.",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "QR Scanning",
+      "UI Redesign"
+    ],
+    "image": "akfacomfort",
+    "links": {
+      "playStore": "https://play.google.com/store/apps/details?id=uz.akfa.comfort",
+      "appStore": "https://apps.apple.com/uz/app/akfa-comfort/id6474091361"
+    }
+  }
+]

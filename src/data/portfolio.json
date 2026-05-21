@@ -1,0 +1,34 @@
+{
+  "personal": {
+    "name": "Bobur Otaboyev",
+    "role": {
+      "accent": "Software",
+      "title": "Engineer"
+    },
+    "socials": {
+      "github": "https://github.com/Boburbro",
+      "linkedin": "https://www.linkedin.com/in/bobur-otaboyev-506117308/",
+      "telegram": "https://t.me/itwithBobur",
+      "email": "boburotaboyev0@gmail.com"
+    },
+    "bio": "I build mobile and web applications with Flutter and Python. Passionate about clean architecture, great user experiences, and shipping products that make a difference."
+  },
+  "blog": [
+    {
+      "title": "How to build modern web apps with Vite",
+      "date": "May 2026"
+    },
+    {
+      "title": "My journey into Software Engineering",
+      "date": "Apr 2026"
+    },
+    {
+      "title": "The importance of clean code",
+      "date": "Mar 2026"
+    },
+    {
+      "title": "Flutter vs React Native in 2026",
+      "date": "Feb 2026"
+    }
+  ]
+}

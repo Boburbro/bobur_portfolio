@@ -5,6 +5,19 @@ import { Mail, Code, GraduationCap, Briefcase, PenTool, ArrowRight, ArrowLeft, F
 import boburImg1 from './assets/bobur.png';
 import boburImg2 from './assets/bobur2.png';
 import boburImg3 from './assets/bobur3.png';
+import portfolioData from './data/portfolio.json';
+import projectsData from './data/projects.json';
+import careerData from './data/career.json';
+import academicData from './data/academic.json';
+import bozormediaImg from './assets/bozormedia.png';
+import akfacomfortImg from './assets/akfacomfort.png';
+import ishtopImg from './assets/ishtop.png';
+
+const projectImages = {
+  bozormedia: bozormediaImg,
+  akfacomfort: akfacomfortImg,
+  ishtop: ishtopImg
+};
 
 const heroImages = [boburImg1, boburImg2, boburImg3];
 
@@ -21,18 +34,25 @@ const TelegramIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.2 4.4 2.4 10.8c-.6.2-.6 1 0 1.2l4.6 1.4 2 6.2c.2.4.6.4.8.2l2.8-2.2 4.4 3.2c.4.2.8 0 1-.4L22.8 5.6c.2-.6-.4-1.2-1-.8l-.6.2"/><path d="m7 13.4 9.4-6.6"/></svg>
 );
 
+const PlayStoreIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 16 16" fill="currentColor">
+    <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055zM1 13.396V2.603L6.846 8zM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27"/>
+  </svg>
+);
+
+const AppStoreIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-.96.04-2.13.64-2.82 1.45-.6.7-1.13 1.84-.99 2.94.1.08.2.12.3.12.87 0 1.96-.54 2.52-1.45z"/>
+  </svg>
+);
+
 /* ===== Page Components ===== */
 const ProjectsPage = () => (
   <div className="page-container">
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <h2 className="page-title">Projects</h2>
       <div className="card-grid">
-        {[
-          { name: 'Redeem', desc: 'Mobile fuel payment app with QR scanning and real-time pump selection.', tags: ['Flutter', 'Dart', 'REST API'] },
-          { name: 'Market Manager', desc: 'POS management system for retail stores with cashier workflow.', tags: ['Go', 'React', 'PostgreSQL'] },
-          { name: 'Redeem Driver', desc: 'Driver companion app with map clustering and fuel delivery tracking.', tags: ['Flutter', 'Google Maps', 'BLoC'] },
-          { name: 'Portfolio', desc: 'This website — built from scratch with modern React and Vite.', tags: ['React', 'Vite', 'Framer Motion'] }
-        ].map((project, i) => (
+        {projectsData.map((project, i) => (
           <motion.div
             key={i}
             className="card"
@@ -41,13 +61,43 @@ const ProjectsPage = () => (
             transition={{ delay: i * 0.08, duration: 0.3 }}
           >
             <div className="card-header">
-              <Code className="card-icon" size={18} />
+              {project.image && projectImages[project.image] ? (
+                <img src={projectImages[project.image]} alt={project.name} className="project-card-image" />
+              ) : (
+                <Code className="card-icon" size={18} />
+              )}
               <h3 className="card-title">{project.name}</h3>
             </div>
             <p className="card-desc">{project.desc}</p>
             <div className="card-tags">
               {project.tags.map((tag, j) => <span key={j} className="tag">{tag}</span>)}
             </div>
+            {project.links && (
+              <div className="project-links">
+                {project.links.playStore && (
+                  <a
+                    href={project.links.playStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-btn"
+                  >
+                    <PlayStoreIcon size={14} />
+                    <span>Play Store</span>
+                  </a>
+                )}
+                {project.links.appStore && (
+                  <a
+                    href={project.links.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-btn"
+                  >
+                    <AppStoreIcon size={14} />
+                    <span>App Store</span>
+                  </a>
+                )}
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
@@ -60,10 +110,7 @@ const CareerPage = () => (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <h2 className="page-title">Career</h2>
       <div className="timeline">
-        {[
-          { title: 'Software Engineer', company: 'Tech Corp', date: '2023 — Present', desc: 'Building scalable mobile and web applications.' },
-          { title: 'Junior Developer', company: 'Startup Hub', date: '2021 — 2023', desc: 'Full-stack development with Flutter and Go.' }
-        ].map((job, i) => (
+        {careerData.map((job, i) => (
           <motion.div
             key={i}
             className="timeline-item"
@@ -85,78 +132,7 @@ const CareerPage = () => (
   </div>
 );
 
-/* ===== Academic Data ===== */
-const academicData = [
-  {
-    id: 'kaust',
-    university: 'KAUST',
-    fullName: 'King Abdullah University of Science and Technology',
-    degree: 'Magistr',
-    years: '2026 — Present',
-    semesters: [
-      {
-        id: 'kaust-semester-1',
-        name: '1-semestr',
-        year: '2026',
-        items: [
-          'Machine Learning kursi',
-          'Research metodologiyasi'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'millat-umidi',
-    university: 'Millat Umidi',
-    fullName: 'Millat Umidi Universiteti',
-    degree: 'Bakalavr',
-    years: '2023 — 2026',
-    semesters: [
-      {
-        id: 'mu-semester-2',
-        name: '2-semestr',
-        year: '2024',
-        items: [
-          'Data Structures kursi loyihasi',
-          'Algoritm tahlili presentatsiyasi'
-        ]
-      },
-      {
-        id: 'mu-semester-1',
-        name: '1-semestr',
-        year: '2023',
-        items: [
-          'Python asoslari loyihasi',
-          'Kirish imtihon maqolasi'
-        ]
-      }
-    ]
-  }
-];
-
-const semesterDetails = {
-  'kaust-semester-1': {
-    name: '1-semestr — KAUST',
-    works: [
-      { title: 'Machine Learning kursi loyihasi', type: 'project', format: 'pdf', desc: 'Supervised learning modellari implementatsiyasi.' },
-      { title: 'Research metodologiyasi taqdimoti', type: 'presentation', format: 'pptx', desc: 'Ilmiy tadqiqot metodlari bo\'yicha prezentatsiya.' }
-    ]
-  },
-  'mu-semester-2': {
-    name: '2-semestr — Millat Umidi',
-    works: [
-      { title: 'Data Structures kursi loyihasi', type: 'project', format: 'pdf', desc: 'Linked list, stack va queue implementatsiyasi.' },
-      { title: 'Algoritm tahlili presentatsiyasi', type: 'presentation', format: 'pptx', desc: 'Sorting algoritmlarini taqqoslash.' }
-    ]
-  },
-  'mu-semester-1': {
-    name: '1-semestr — Millat Umidi',
-    works: [
-      { title: 'Python asoslari loyihasi', type: 'project', format: 'pdf', desc: 'Calculator va to-do app yaratish.' },
-      { title: 'Kirish imtihon maqolasi', type: 'paper', format: 'pdf', desc: 'IT sohasiga kirish bo\'yicha akademik maqola.' }
-    ]
-  }
-};
+/* ===== Academic Data loaded from JSON ===== */
 
 const formatIcon = (format) => {
   switch (format) {
@@ -183,7 +159,7 @@ const AcademicPage = () => {
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
         <h2 className="page-title">Academic</h2>
 
-        {academicData.map((uni, uniIdx) => (
+        {academicData.academic.map((uni, uniIdx) => (
           <div key={uni.id} className="academic-university-block">
             <div className="academic-uni-header">
               <div>
@@ -232,7 +208,7 @@ const AcademicPage = () => {
 const SemesterDetailPage = () => {
   const { semesterId } = useParams();
   const navigate = useNavigate();
-  const semester = semesterDetails[semesterId];
+  const semester = academicData.semesterDetails[semesterId];
 
   if (!semester) {
     return (
@@ -286,12 +262,7 @@ const BlogPage = () => (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <h2 className="page-title">Blog</h2>
       <div className="blog-list">
-        {[
-          { title: 'How to build modern web apps with Vite', date: 'May 2026' },
-          { title: 'My journey into Software Engineering', date: 'Apr 2026' },
-          { title: 'The importance of clean code', date: 'Mar 2026' },
-          { title: 'Flutter vs React Native in 2026', date: 'Feb 2026' }
-        ].map((post, i) => (
+        {portfolioData.blog.map((post, i) => (
           <motion.div
             key={i}
             className="blog-item"
@@ -320,6 +291,8 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const { personal } = portfolioData;
+
   return (
     <div className="hero">
       <motion.div
@@ -328,21 +301,20 @@ const HomePage = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="hero-name">Bobur Otaboyev</h1>
+        <h1 className="hero-name">{personal.name}</h1>
         <p className="hero-role">
-          <span className="hero-role-accent">Software</span> Engineer
+          <span className="hero-role-accent">{personal.role.accent}</span> {personal.role.title}
         </p>
 
         <div className="hero-socials">
-          <a href="https://github.com/Boburbro" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="GitHub"><GithubIcon size={18} /></a>
-          <a href="https://www.linkedin.com/in/bobur-otaboyev-506117308/" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="LinkedIn"><LinkedinIcon size={18} /></a>
-          <a href="https://t.me/itwithBobur" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="Telegram"><TelegramIcon size={18} /></a>
-          <a href="mailto:boburotaboyev0@gmail.com" className="hero-social-link" aria-label="Email"><Mail size={18} /></a>
+          <a href={personal.socials.github} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="GitHub"><GithubIcon size={18} /></a>
+          <a href={personal.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="LinkedIn"><LinkedinIcon size={18} /></a>
+          <a href={personal.socials.telegram} target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="Telegram"><TelegramIcon size={18} /></a>
+          <a href={`mailto:${personal.socials.email}`} className="hero-social-link" aria-label="Email"><Mail size={18} /></a>
         </div>
 
         <p className="hero-bio">
-          I build mobile and web applications with Flutter, React, and Go. Passionate about clean architecture, 
-          great user experiences, and shipping products that make a difference.
+          {personal.bio}
         </p>
 
         <div className="hero-buttons">
@@ -363,7 +335,7 @@ const HomePage = () => {
             <motion.img
               key={currentImg}
               src={heroImages[currentImg]}
-              alt="Bobur Otaboyev"
+              alt={personal.name}
               className="hero-img"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -394,7 +366,7 @@ function App() {
     <>
       {/* Top Navbar */}
       <nav className="navbar">
-        <NavLink to="/" className="navbar-brand">Bobur Otaboyev</NavLink>
+        <NavLink to="/" className="navbar-brand">{portfolioData.personal.name}</NavLink>
         <div className="navbar-links">
           {navItems.map((item) => (
             <NavLink
