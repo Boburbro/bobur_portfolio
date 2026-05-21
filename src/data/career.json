@@ -1,14 +1,20 @@
 [
   {
-    "title": "Software Engineer",
-    "company": "Tech Corp",
-    "date": "2023 — Present",
-    "desc": "Building scalable mobile and web applications."
+    "title": "Mobile Developer",
+    "company": "Carinfo MChJ",
+    "date": "2026 April - Present",
+    "desc": "Developed and maintained the Redeem mobile application, a corporate fuel control and fleet management platform. Implemented secure QR-based refueling transactions, geolocated maps for finding partner gas stations, and automated tracking modules for driver fuel limits and analytics."
   },
   {
-    "title": "Junior Developer",
-    "company": "Startup Hub",
-    "date": "2021 — 2023",
-    "desc": "Full-stack development with Flutter and Go."
+    "title": "Mobile Developer",
+    "company": "Devcraft MChJ",
+    "date": "2025 October - 2026 March",
+    "desc": "Focused primarily on architecting and developing a comprehensive enterprise ERP system, including integrated POS, B2B automation, and sales CRM modules. Engineered bookkeeping and accounting features inspired by 1C database patterns."
+  },
+  {
+    "title": "Mobile Developer",
+    "company": "Real Solution MChJ",
+    "date": "2025 March - 2025 September",
+    "desc": "Developed high-performance mobile applications, focusing on low-latency live streaming integration (RTMP & WebRTC) and complex layout redesigns from Figma. Implemented custom calculator engines and localized client-server synchronization. Collaborated closely with cross-functional teams to deliver production-ready features."
   }
 ]
