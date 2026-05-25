@@ -12,11 +12,13 @@ import academicData from './data/academic.json';
 import bozormediaImg from './assets/bozormedia.png';
 import akfacomfortImg from './assets/akfacomfort.png';
 import ishtopImg from './assets/ishtop.png';
+import benefitImg from './assets/benefit.png';
 
 const projectImages = {
   bozormedia: bozormediaImg,
   akfacomfort: akfacomfortImg,
-  ishtop: ishtopImg
+  ishtop: ishtopImg,
+  benefit: benefitImg
 };
 
 const heroImages = [boburImg1, boburImg2, boburImg3];

@@ -42,5 +42,18 @@
       "playStore": "https://play.google.com/store/apps/details?id=uz.akfa.comfort",
       "appStore": "https://apps.apple.com/uz/app/akfa-comfort/id6474091361"
     }
+  },
+  {
+    "name": "Benefit",
+    "desc": "An enterprise ERP system where I designed and developed POS (Point of Sale) modules, obtaining critical mobile development expertise with Flutter. Gained valuable experience implementing inventory workflows, dynamic cashier interfaces, and integrating receipt printing functionality via both WiFi and Bluetooth.",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "ERP",
+      "POS System",
+      "Bluetooth & WiFi Printing"
+    ],
+    "image": "benefit",
+    "links": {}
   }
 ]
